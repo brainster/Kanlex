@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-21T16:56:45+08:00
+
+====== Архитектура приложения ======
+
+Рассмотрим архитектуру серверного приложения. Сервер может содержать несколько сервисов:
+
+* [[Development:Services:AuthenticationService|Сервис авторизации]] - производит авторизацию игроков и сохранение сессии;
+* [[Development:Services:LobbyService|Сервис лобби]] - поиск игровых серверов;
+* [[Development:Services:CommunicationService|Сервис общения]] - общение между игроками, чат;
+* [[Development:Services:RealmService|Игровой сервис]] - расчёт игровой логики. Синхронизация объектов.
+
+

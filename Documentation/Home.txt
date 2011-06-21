@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-21T14:49:38+08:00
+
+====== Home ======
+
+Главная страница документации
+
+[[Development]] - Страница разработки
+Ideas - Различные идеи
