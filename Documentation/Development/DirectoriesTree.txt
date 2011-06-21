@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-21T17:43:07+08:00
+
+====== Структура директорий проекта ======
+
+===== Service =====
+Серверное приложение.
+
+**Contracts** - список интерфейсов контрактов. Например: IAuthenticationService, ICommunicationService
+**Services** - реализация контрактов. Например [[Development:Services:AuthenticationService|AuthenticationService]], [[Development:Services:CommunicationService|CommunicationService.]]
+**Models**// -// сущности. Например: User, Session.
+**Repositories** - хранилища сущностей. UsersRepository, SessionsRepository.
+     
+
+===== Client =====
+	Клиентское приложение.
+
+
+===== Game =====
+Игровая библиотека.
+
+**Core** - базовые классы

@@ -11,4 +11,4 @@ Creation-Date: 2011-06-21T16:56:45+08:00
 * [[Development:Services:CommunicationService|Сервис общения]] - общение между игроками, чат;
 * [[Development:Services:RealmService|Игровой сервис]] - расчёт игровой логики. Синхронизация объектов.
 
-
+[[Development:DirectoriesTree|Структура директорий]]
