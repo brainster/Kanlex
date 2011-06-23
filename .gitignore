@@ -1,1 +1,5 @@
 Documentation/.zim
+Sources/Bin
+Sources/obj
+Binaries/*.pid
+Binaries/*.vshost.exe
