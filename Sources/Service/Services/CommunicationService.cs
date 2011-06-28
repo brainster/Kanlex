@@ -1,9 +1,9 @@
 ﻿
 
-namespace Kanlex.Service.Service.Services {
+namespace Kanlex.Service.Services {
 	using System;
-	using Kanlex.Service.Service.Contracts;
-	using Kanlex.Service.Service.Models;
+	using Kanlex.Service.Contracts;
+	using Kanlex.Service.Models;
 
 	class CommunicationService : ICommunicationService {
 		public void Authenticate(Session session) {

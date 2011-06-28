@@ -11,7 +11,8 @@
     <RootNamespace>Kanlex.Service</RootNamespace>
     <AssemblyName>Kanlex.Service</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -33,9 +34,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Kanlex.Service.Service.Application</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Engine\Core\" />
@@ -47,14 +53,22 @@
     <Compile Include="Service\Contracts\ICommunicationService.cs" />
     <Compile Include="Service\Contracts\ILobbyService.cs" />
     <Compile Include="Service\Contracts\IRealmService.cs" />
+    <Compile Include="Service\Managers\AuthenticationManager.cs" />
+    <Compile Include="Service\Managers\CommunicationManager.cs" />
     <Compile Include="Service\Models\Session.cs" />
     <Compile Include="Service\Models\User.cs" />
+    <Compile Include="Service\Repositories\DatabaseContext.cs" />
     <Compile Include="Service\Repositories\SessionRepository.cs" />
     <Compile Include="Service\Repositories\UserRepository.cs" />
     <Compile Include="Service\Services\AuthenticationService.cs" />
     <Compile Include="Service\Services\CommunicationService.cs" />
     <Compile Include="Service\Services\LobbyService.cs" />
     <Compile Include="Service\Services\RealmService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

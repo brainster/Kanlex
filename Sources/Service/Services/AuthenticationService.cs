@@ -1,33 +1,20 @@
 ﻿
-namespace Kanlex.Service.Service.Services {
-	using Kanlex.Service.Service.Contracts;
-	using Kanlex.Service.Service.Models;
-	using Kanlex.Service.Service.Repositories;
+namespace Kanlex.Service.Services {
+	using System.ServiceModel;
+	using Kanlex.Service.Contracts;
+	using Kanlex.Service.Managers;
+	using Kanlex.Service.Models;
 
+	[ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]
 	class AuthenticationService : IAuthenticationService {
 		public Session Authenticate(string login, string password) {
-			bool userRegistered = pUserRepository.Contains(login);
-
-			if (!userRegistered) // No user registered
-				return null;
-
-			// User registered
-			User user = pUserRepository.Get(login);
-			Session session = new Session(user);
-			pSessionRepository.Insert(session);
-			return session;
+			return pManager.Authenticate(login, password);
 		}
 
 		public void Register(string login, string password) {
-			bool userRegistered = pUserRepository.Contains(login);
-			
-			if (userRegistered)
-				return;
-
-			pUserRepository.Insert(new User(login, password));
+			pManager.Register(login, password);
 		}
 
-		private UserRepository pUserRepository = UserRepository.Instance;
-		private SessionRepository pSessionRepository = SessionRepository.Instance;
+		private AuthenticationManager pManager = AuthenticationManager.Instance;
 	}
 }

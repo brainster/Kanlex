@@ -1,7 +1,9 @@
 ﻿
-namespace Kanlex.Service.Service.Models {
+namespace Kanlex.Service.Models {
 	using System;
+	using System.Runtime.Serialization;
 
+	[DataContract]
 	class User : IEquatable<User> {
 		public User(string login, string password) {
 			Login = login;
@@ -13,9 +15,11 @@ namespace Kanlex.Service.Service.Models {
 		}
 
 		/// <summary>Gets login.</summary>
+		[DataMember]
 		public string Login { get; private set; }
 
 		/// <summary>Gets or sets password.</summary>
+		[DataMember]
 		public string Password { get; set; }
 	}
 }

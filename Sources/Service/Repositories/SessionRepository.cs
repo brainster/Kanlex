@@ -1,7 +1,7 @@
 ﻿
-namespace Kanlex.Service.Service.Repositories {
+namespace Kanlex.Service.Repositories {
 	using System.Collections.Generic;
-	using Kanlex.Service.Service.Models;
+	using Kanlex.Service.Models;
 
 	class SessionRepository {
 		public void Insert(Session session) {
@@ -9,7 +9,6 @@ namespace Kanlex.Service.Service.Repositories {
 		}
 
 		private Dictionary<string, Session> pRepository = new Dictionary<string, Session>();
-		private static SessionRepository pInstance = new SessionRepository();
-		public static SessionRepository Instance { get { return pInstance; } }
+
 	}
 }
